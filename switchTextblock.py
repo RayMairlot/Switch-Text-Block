@@ -50,21 +50,21 @@ class PreviousTextBlockOperator(bpy.types.Operator):
         return {'FINISHED'}    
 
 
-def main(context, direction=""):
+def main(context, direction=""):        #Same function used for both operators, pass in direction
     
-    if direction=="Next":
+    if direction=="Next":               #If going forward offset is positive number
         offset = 1
     else:
-        offset = -1
+        offset = -1                     #If going backwards offset is negative number
     
-    texts = []
+    texts = []                                          #Empty list to copy text blocks into
     
     for text in bpy.data.texts:
         texts.append(text.name)
         
-    textIndex = texts.index(context.edit_text.name)
+    textIndex = texts.index(context.edit_text.name)     #Text blocks were copied to use '.index' property of lists
         
-    space = context.area.spaces[0]
+    space = context.area.spaces[0]                      #Get the Text Editor space from the context
     
     
     if textIndex<len(bpy.data.texts)-1 and direction=="Next":    #Not at end, going forward                             
