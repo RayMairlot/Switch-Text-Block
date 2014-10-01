@@ -18,7 +18,7 @@
 
 bl_info = {
     "name": "Switch Text Block",
-    "description": "Switch the active text blocks with shortcuts",
+    "description": "Switch the active text block with shortcuts",
     "author": "Ray Mairlot",
     "version": (1, 0),
     "blender": (2, 71, 0),
