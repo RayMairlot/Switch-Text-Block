@@ -33,6 +33,10 @@ class NextTextBlockOperator(bpy.types.Operator):
     bl_idname = "text.text_block_next"
     bl_label = "Next text block"
 
+    @classmethod
+    def poll(cls, context):
+        return len(bpy.data.texts) > 0
+    
 
     def execute(self, context):
         main(context,"Next")
@@ -43,6 +47,10 @@ class PreviousTextBlockOperator(bpy.types.Operator):
     """ Switch to the previous text block in the list """
     bl_idname = "text.text_block_previous"
     bl_label = "Prevous text block"
+
+    @classmethod
+    def poll(cls, context):
+        return len(bpy.data.texts) > 0
 
 
     def execute(self, context):
